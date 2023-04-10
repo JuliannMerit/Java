@@ -27,4 +27,4 @@ replay_pid*
 *.xml
 *.iml
 
-./javafx-sdk-20/
+javafx-sdk-20
