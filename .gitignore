@@ -24,7 +24,7 @@ TP_Projet
 hs_err_pid*
 replay_pid*
 
-*.xml
+.idea/
 *.iml
 
 javafx-sdk-20
