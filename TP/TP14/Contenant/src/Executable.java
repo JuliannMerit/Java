@@ -16,7 +16,7 @@ public class Executable {
         conteneurs.add(couple);
         conteneurs.add(ensemble);
         conteneurs.add(couple2);
-        System.out.println(GestionContenant.contiennentTous(conteneurs, 0));
-        System.out.println(GestionContenant.contiennentTous(conteneurs, 1));
+        System.out.println(GestionContenant.<Integer>contiennentTous(conteneurs, 0));
+        System.out.println(GestionContenant.<Integer>contiennentTous(conteneurs, 1));
     }
 }
