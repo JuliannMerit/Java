@@ -33,6 +33,9 @@ public class RendezVous implements Comparable<RendezVous>{
 
     public boolean intersecte(RendezVous rendezVous) {
     // Renvoie vrai si this et rendezVous 'tombent en même temps'
-        return this.debut.compareTo(rendezVous.debut) >= 0 && this.fin.compareTo(rendezVous.fin) <= 0;
+        return
+            this.debut.compareTo(rendezVous.debut) * this.debut.compareTo(rendezVous.fin) < 0 ||
+            this.fin.compareTo(rendezVous.debut) * this.fin.compareTo(rendezVous.fin) < 0 ||
+            this.debut.compareTo(rendezVous.debut) == 0 && this.fin.compareTo(rendezVous.fin) == 0;
     }
 }
