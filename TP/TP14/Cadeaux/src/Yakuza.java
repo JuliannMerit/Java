@@ -7,14 +7,14 @@ public class Yakuza implements Personnage {
         sac = new ArrayList<Cadeau>();
     }
     @Override
-    public String entendreUnMessage(String message) {
+    public String entendre(String message) {
         while (!sac.isEmpty()) {
             sac.remove(0);
         }
         return "J'ai perdu tous mes cadeaux";
     }
     @Override
-    public String recevoirUnCadeau(Cadeau cadeau) {
+    public String recevoir(Cadeau cadeau) {
         int poids = 0;
         for (Cadeau c : sac) {
             poids += c.getPoids();
@@ -28,7 +28,7 @@ public class Yakuza implements Personnage {
     }
     @Override
     public String interagir(Personnage personnage) {
-        personnage.recevoirUnCadeau(sac.get(0));
+        personnage.recevoir(sac.get(0));
         return "Voici un cadeau";
     }
     @Override

@@ -9,12 +9,12 @@ public class Ronin implements Personnage {
         this.motDePasse = null;
     }
     @Override
-    public String entendreUnMessage(String message) {
+    public String entendre(String message) {
         this.motDePasse = message;
         return this.motDePasse;
     }
     @Override
-    public String recevoirUnCadeau(Cadeau cadeau) {
+    public String recevoir(Cadeau cadeau) {
         int poids = 0;
         if (this.cadeaux.isEmpty()) { this.cadeaux.add(cadeau); }
         else {
@@ -35,7 +35,7 @@ public class Ronin implements Personnage {
         }
         if (poids >= 20) {
             this.cadeaux.remove(this.cadeaux.size()-1);
-            personnage.recevoirUnCadeau(this.cadeaux.get(this.cadeaux.size()-1));
+            personnage.recevoir(this.cadeaux.get(this.cadeaux.size()-1));
             return "Mon sac est trop lourd, voici un cadeau";
         }
         return "Je suis Ronin et je n'ai pas de cadeaux à offrir";
