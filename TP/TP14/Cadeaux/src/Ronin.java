@@ -1,11 +1,9 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Ronin implements Personnage {
-    private List<Cadeau> cadeaux;
+public class Ronin extends RonYak{
     private String motDePasse;
     public Ronin() {
-        this.cadeaux = new ArrayList<Cadeau>();
         this.motDePasse = null;
     }
     @Override
