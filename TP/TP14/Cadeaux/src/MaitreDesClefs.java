@@ -1,6 +1,7 @@
 public class MaitreDesClefs implements Personnage{
     public String motDePasse;
 
+    
     public MaitreDesClefs(String motDePasse) {
         this.motDePasse = motDePasse;
     }
