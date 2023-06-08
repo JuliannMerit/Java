@@ -13,13 +13,11 @@ public class Ronin extends RonYak{
     }
     @Override
     public String recevoir(Cadeau cadeau) {
-        int poids = 0;
-        if (this.cadeaux.isEmpty()) { this.cadeaux.add(cadeau); }
+        if (this.cadeaux.isEmpty()) {
+            this.cadeaux.add(cadeau);
+        }
         else {
-            for (Cadeau c : this.cadeaux) {
-                poids += c.getPoids();
-            }
-            if (poids + cadeau.getPoids() >= 30) {
+            if (this.poidsCadeau() + cadeau.getPoids() >= 30) {
                 return "J'ai perdu le cadeau";
             }
         }
@@ -27,11 +25,7 @@ public class Ronin extends RonYak{
     }
     @Override
     public String interagir(Personnage personnage) {
-        int poids = 0;
-        for (Cadeau c : this.cadeaux) {
-            poids += c.getPoids();
-        }
-        if (poids >= 20) {
+        if (this.poidsCadeau() >= 20) {
             this.cadeaux.remove(this.cadeaux.size()-1);
             personnage.recevoir(this.cadeaux.get(this.cadeaux.size()-1));
             return "Mon sac est trop lourd, voici un cadeau";

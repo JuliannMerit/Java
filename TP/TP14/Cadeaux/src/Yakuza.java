@@ -12,14 +12,10 @@ public class Yakuza extends RonYak {
     }
     @Override
     public String recevoir(Cadeau cadeau) {
-        int poids = 0;
-        for (Cadeau c : cadeaux) {
-            poids += c.getPoids();
-        }
         if (cadeaux.isEmpty()) {
             cadeaux.add(cadeau);
         }
-        else if (poids + cadeau.getPoids() >= 50) {
+        else if (this.poidsCadeau() + cadeau.getPoids() >= 50) {
             return "J'ai perdu le cadeau, mon cadeaux est trop lourd";
         }
         else { cadeaux.add(cadeau); }
